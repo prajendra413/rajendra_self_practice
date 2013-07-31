@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  firstBean configuration -->
+	<bean id = "fistBean" class = "com.spring.service.MyFirstSpringService">
+		<property name="name" value = "Welcome to Spring World"></property>
+	</bean>
+	
+	<!-- AccountService bean configuration -->
+	<bean id = "accountService" class = "com.spring.service.AccountService">
+		<property name = "accountDAO" ref = "accountDAO"></property>
+	</bean>
+	
+	<!--AccountDAO bean configuration  -->
+	<bean id = "accountDAO" class = "com.spring.dao.CsvAccountDAO">
+		<property name = "csvResource" value = "accounts.csv"></property>
+	</bean>
+
+</beans>
