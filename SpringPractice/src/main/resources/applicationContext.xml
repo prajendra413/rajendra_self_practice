@@ -4,23 +4,19 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-	<!--  firstBean configuration -->
-	<bean id = "fistBean" class = "com.spring.service.MyFirstSpringService">
-		<property name="name" value = "Welcome to Spring World"></property>
-	</bean>
 	
 	<!-- AccountService bean configuration -->
-	<bean id = "accountService" class = "com.spring.service.AccountService">
+	<bean id = "accountService" class = "com.spring.service.di.AccountService">
 		<property name = "accountDAO" ref = "csvAccountDAO"></property>
 	</bean>
 	
 	<!--CSV AccountDAO bean configuration  -->
-	<bean id = "csvAccountDAO" class = "com.spring.dao.CsvAccountDAO" c:csvFile="accounts.csv">
+	<bean id = "csvAccountDAO" class = "com.spring.dao.di.CsvAccountDAO" c:csvFile="accounts.csv">
 		<!-- constructor-arg value = "accounts.csv"></constructor-arg-->
 	</bean>
 	
 	<!--JDBC AccountDAO bean configuration  -->
-	<bean id = "jdbcAccountDAO" class = "com.spring.dao.JDBCAccountDAO" p:basicDataSource-ref="dataSource">
+	<bean id = "jdbcAccountDAO" class = "com.spring.dao.di.JDBCAccountDAO" p:basicDataSource-ref="dataSource">
 		<!-- property name = "basicDataSource" ref = "dataSource"></property-->
 	</bean>
 	

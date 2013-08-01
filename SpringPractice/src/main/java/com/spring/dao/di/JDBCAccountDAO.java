@@ -1,4 +1,4 @@
-package com.spring.dao;
+package com.spring.dao.di;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.commons.dbcp.BasicDataSource;
 
 import com.spring.domain.Account;
+
 
 public class JDBCAccountDAO implements AccountDAO {
 
