@@ -24,10 +24,10 @@ public class JDBCAccountAnnotateDAO implements AccountAnnotateDAO {
     public List<Account> findAccounts() {
 	    List<Account> accounts = new ArrayList<>();
 		try {
-	      ResultSet rs =  basicDataSource.getConnection().createStatement().executeQuery("Select * from Account");
+	      ResultSet rs =  basicDataSource.getConnection().createStatement().executeQuery("Select * from account");
 	    
 	      while(rs.next()){
-	    	  accounts.add(new Account(rs.getString("Name"), Integer.parseInt(rs.getString("No")), Long.parseLong(rs.getString("Balance"))));
+	    	  accounts.add(new Account(Integer.parseInt(rs.getString("ID")), rs.getString("Name"), Long.parseLong(rs.getString("Balance"))));
 	      }
 	        
         } catch (SQLException e) {

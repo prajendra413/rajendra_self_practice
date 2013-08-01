@@ -31,7 +31,7 @@ public class CsvAccountDAO implements AccountDAO {
     		try {
     	        while((line= br.readLine()) != null) {
     	        	String fields[] = line.split(",");
-    	        	accounts.add(new Account(fields[0], Integer.parseInt(fields[1]), Long.parseLong(fields[2])));
+    	        	accounts.add(new Account( Integer.parseInt(fields[0]), fields[1], Long.parseLong(fields[2])));
     	        }
             }
     		catch (IOException e) {
