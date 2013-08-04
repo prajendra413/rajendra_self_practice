@@ -1,0 +1,14 @@
+apply plugin:'java'
+apply plugin: 'eclipse'
+
+repositories {   
+    mavenCentral()
+}
+
+dependencies {
+	compile 'org.hibernate:hibernate-entitymanager:4.0.0.Final'
+}
+
+task createWrapper(type: Wrapper) {
+gradleVersion = '1.6'
+}
