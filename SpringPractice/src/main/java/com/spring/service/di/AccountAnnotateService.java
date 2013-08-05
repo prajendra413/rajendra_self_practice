@@ -15,7 +15,7 @@ public class AccountAnnotateService {
 	// We can define autowired annonation at setter method level also
 	
 	@Autowired()
-	@Qualifier("jdbcAccountDAO")
+	@Qualifier("springJDBCAccountDAO")
 	private AccountAnnotateDAO accountDAO;
 
 	public AccountAnnotateDAO getAccountDAO() {

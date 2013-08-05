@@ -2,12 +2,21 @@ package com.spring.service.di.instrument;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import com.spring.dao.di.instrument.Instrument;
 
 public class InstrumentsList implements Performer {
 
 	private String song;
+	
+	@Autowired
+	//@Qualifier
+	//@Qualifier("instrument1")
 	private Instrument instrument;
+	
+	@Autowired(required = false)
 	private List<Instrument> instruments;
 	
 	public List<Instrument> getInstruments() {

@@ -23,6 +23,13 @@
 		<property name = "password" value = "${dataSource.password}"></property>
 	</bean>
 	
+	<bean id = "springDataSource" class = "org.springframework.jdbc.datasource.DriverManagerDataSource" p:driverClassName="${dataSource.driverClassName}">
+		<!-- property name = "driverClassName" value = "${dataSource.driverClassName}"></property-->
+		<property name = "url" value = "${dataSource.url}"></property>
+		<property name = "username" value = "${dataSource.userName}"></property>
+		<property name = "password" value = "${dataSource.password}"></property>
+	</bean>
+	
 	<bean class = "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value = "dataSource.properties"></property>
 	</bean>

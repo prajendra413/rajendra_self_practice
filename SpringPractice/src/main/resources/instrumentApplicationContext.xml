@@ -3,49 +3,55 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:c="http://www.springframework.org/schema/c"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd 
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 	
+	<context:annotation-config/>
+	<context:component-scan base-package="com.spring"/>
 	<!-- Kenny bean configuration -->
 	<bean id = "kenny" class = "com.spring.service.di.instrument.InstrumentsList" autowire="byName">
 		<property name = "song" value = "Jingle Bells"></property>
 		<!-- property name = "instrument" ref = "saxophone"></property-->
-		<property name = "instruments">
+		<!-- property name = "instruments">
 			<list>
 				<ref bean = "saxophone"></ref>
 				<ref bean = "piano"></ref>
 			</list>
-		</property>
+		</property-->
 	</bean>
 	
-	<bean id = "car1" class = "com.spring.service.di.instrument.InstrumentsList">
-		<!-- property name = "song" value = "#{kenny.song}"></property-->
-		<!-- property name = "song" value = "#{kenny.getSong()?.toUpperCase()}"></property-->
-		<!-- property name = "song" value = "#{kenny.song}"></property-->
+	<!-- bean id = "car1" class = "com.spring.service.di.instrument.InstrumentsList">
+		< property name = "song" value = "#{kenny.song}"></property>
+		<property name = "song" value = "#{kenny.getSong()?.toUpperCase()}"></property>
+		<property name = "song" value = "#{kenny.song}"></property>
 		<property name ="instrument" value = "#{saxophone}"></property>
-		<property name = "instruments">
+		< property name = "instruments">
 			<list>
 				<ref bean = "saxophone"></ref>
 				<ref bean = "piano"></ref>
 			</list>
 		</property>
-	</bean>
+	</bean-->
 	
 	<!--Saxophone bean configuration  -->
-	<bean id = "saxophone" class = "com.spring.dao.di.instrument.Saxophone" >
-	</bean>
+	<!-- bean id = "saxophone" class = "com.spring.dao.di.instrument.Saxophone" >
+	</bean-->
 	
 	<!--Saxophone bean configuration  -->
-	<bean id = "instrument1" class = "com.spring.dao.di.instrument.Saxophone" >
-	</bean>
+	<!-- bean id = "instrument1" class = "com.spring.dao.di.instrument.Saxophone" >
+	</bean-->
 	
 	
 	<!--Piano bean configuration  -->
-	<bean id = "piano" class = "com.spring.dao.di.instrument.Piano" >
-	</bean>
+	<!-- bean id = "piano" class = "com.spring.dao.di.instrument.Piano" >
+	</bean-->
 	
 		
 	<!--Piano bean configuration  -->
-	<bean id = "instrument" class = "com.spring.dao.di.instrument.Piano" >
-	</bean>
+	<!-- bean id = "instrument" class = "com.spring.dao.di.instrument.Piano" >
+	</bean-->
 	
 </beans>
