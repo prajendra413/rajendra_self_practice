@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hibernate.domain.application3.Book" table="Book">
+		<id name="id" column="Id" type="java.lang.Integer">
+			<generator class = "assigned"></generator>
+		</id>
+		<discriminator column = "Offer_Type" type = "string" length = "20"></discriminator>
+		<property name="name" column="Name" type="string"/>
+		<property name = "type" column = "Type" type = "string" length = "20"></property>
+		<property name="price" column="Price" type="java.math.BigDecimal"/>
+		<subclass name = "com.hibernate.domain.application3.AnnEditionBook" extends = "Book" discriminator-value = "AE">
+			<property name="discount" column = "Discount" type = "byte"></property>
+		</subclass>
+		<subclass name = "com.hibernate.domain.application3.SpecialEditionBook" extends = "Book" discriminator-value = "SE">
+			<property name="cds" column = "Cds" type = "byte"></property>
+		</subclass>
+	</class>
+</hibernate-mapping>
+
