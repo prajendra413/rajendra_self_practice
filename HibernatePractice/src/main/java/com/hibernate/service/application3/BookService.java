@@ -18,6 +18,7 @@ public class BookService {
 		org.hibernate.Transaction tx = session.beginTransaction();
 		
 		Book book = new Book();
+		book.setId((short)1);
 		book.setName("Spring");
 		book.setPrice(new BigDecimal(450));
 		book.setType("J2EE");
@@ -48,7 +49,7 @@ public class BookService {
 		
 		session.close();
 		
-		HibernateUtil.shutDown();// TODO Auto-generated method stub
+		HibernateUtil.shutDown();
 
 	}
 

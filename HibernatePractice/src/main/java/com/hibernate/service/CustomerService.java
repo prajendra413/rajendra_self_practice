@@ -10,7 +10,7 @@ import com.hibernate.domain.Customer;
 public class CustomerService {
 	public static void main(String[] args) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA");
 		
 		EntityManager em = emf.createEntityManager();
 		
