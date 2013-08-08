@@ -18,15 +18,22 @@ import javax.persistence.Version;
 /*
  * Entity : Persistence class
  * Attributes
- * name : entity name , can be used in JPQL
+ * 				name : To define Entity name, it can be used in JPQL
  */
 @Entity	
+
 /*
  * Table : Specifies primary key of the table for give entity
- * Attributes:
- * name : Name of th table
- * catalog : Catalog of the table
- * schema : Schema of the table.
+ * Attributes
+ * 				name	 : Name of th table
+ *				catalog	 : Catalog of the table
+ * 				schema	 : Schema of the table.
+ */
+/*
+ * Table name : 
+ * Fist preference  : Table annotation name property value.
+ * Second preference: Entity annotation name property value.
+ * Third preference : Entity class name
  */
 @Table (name = "Customer")
 public class Customer {
@@ -42,7 +49,7 @@ public class Customer {
 	/*
 	 * Basic : It specifies the optional of the property at java level.
 	 * Attributes
-	 * optional : property  will be optional if it is true.
+	 * 				optional : property  will be optional if it is true.
 	 */
 	@Basic(optional = false)
 	@Column(name = "MiddleName")
