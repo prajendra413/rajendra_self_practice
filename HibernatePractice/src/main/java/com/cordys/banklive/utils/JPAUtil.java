@@ -1,18 +1,20 @@
-package com.cordys.apna.utils;
+package com.cordys.banklive.utils;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class JPAUtil {
 	
-	private String persistenceUniteName;
+	private static final String PERSISTENCE_UNIT_NAME = "JPA";
+	private static EntityManagerFactory  transactionManagerFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 	private EntityManager entityManager;
 	private EntityTransaction entityTransaction;
 	
-	public JPAUtil(String persistenceUnitName)
+	public JPAUtil()
 	{
-		this.persistenceUniteName = persistenceUnitName;
+		entityManager = transactionManagerFactory.createEntityManager();
 	}
 	
 	/**
@@ -20,7 +22,7 @@ public class JPAUtil {
 	 */
 	public void beginTransaction()
 	{
-		entityTransaction = getEntityManager().getTransaction();
+		entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 	}
 	
@@ -28,9 +30,9 @@ public class JPAUtil {
 	 * Inserts object
 	 * @param t
 	 */
-	public <T extends Object>void persist(T t)
+	public <T> void persist(T t)
 	{
-		getEntityManager().persist(t);
+		entityManager.persist(t);
 	}
 	
 	/**
@@ -66,15 +68,6 @@ public class JPAUtil {
 		{
 			entityManager.close();
 		}
-	}
-	
-	private EntityManager getEntityManager()
-	{
-		if(entityManager == null)
-		{
-			entityManager =  Persistence.createEntityManagerFactory(persistenceUniteName).createEntityManager();
-		}
-		return entityManager;
 	}
 
 }
