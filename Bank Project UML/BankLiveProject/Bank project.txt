@@ -1,0 +1,26 @@
+Bank Manager Role tasks
+-----------------------
+1. Customer Account approval.
+2. Customer Credit card approval.
+3. Loan request approval.
+4. Check request approval.
+
+Bank Customer Role tasks
+------------------------
+1. Customer registration.
+2. Change password functionality.
+3. Checking the personal details.
+4. Checking the account details.
+5. Checking the last 10 transactions (Mini Statement).
+6. Statement enquiry.
+7. Adding Beneficiary.
+8. Removing beneficiary.
+9. Fund transfer.
+10. Credit card details.
+11. Credit card payments.
+12. Cheque request.
+13. Check status
+14. Loan Request
+15. Loan status.
+16. Loan payments.
+17. Mobile recharge.
