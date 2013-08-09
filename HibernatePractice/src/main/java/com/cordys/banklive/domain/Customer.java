@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
@@ -105,6 +107,10 @@ public class Customer {
 		@AttributeOverride(name = "state", column = @Column(name = "Customer_State"))
 	} )
 	private Address address;
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
+	private Account account;
 	
 	public int getCustomerId() {
 		return customerId;
@@ -211,5 +217,13 @@ public class Customer {
 	
 	public Address getAddress() {
 		return address;
+	}
+	
+	public Account getAccount() {
+		return account;
+	}
+	
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 }

@@ -4,8 +4,10 @@ import java.util.Calendar;
 
 import com.cordys.banklive.dao.BankLiveDAO;
 import com.cordys.banklive.dao.BankLiveImplDAO;
+import com.cordys.banklive.domain.Account;
 import com.cordys.banklive.domain.Address;
 import com.cordys.banklive.domain.Customer;
+import com.cordys.banklive.utils.JPAUtil;
 
 public class TestCustomerService {
 	
@@ -37,9 +39,23 @@ public static void main(String[] args) {
 	customer.setBirthDate(cal.getTime());
 	customer.setAddress(customerAddress);
 	
-	BankLiveDAO bankLiveDAO = new BankLiveImplDAO();
+	Account account = new Account();
+	account.setAccountNo("abc");
+	account.setUserId("asd");
+	account.setBranchCode("abc");
+	account.setPassword("adef");
+	account.setAmount("90");
 	
-	bankLiveDAO.createEntity(customer);
+	customer.setAccount(account);
+	account.setCustomer(customer);
+	
+	
+	JPAUtil jpaUtil = new JPAUtil();
+	jpaUtil.beginTransaction();	
+	
+	jpaUtil.persist(customer);
+	jpaUtil.persist(account);
+	jpaUtil.commitTransaction();
 }
 
 }
