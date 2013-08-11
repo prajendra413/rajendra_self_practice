@@ -35,6 +35,16 @@ public class JPAUtil {
 		entityManager.persist(t);
 	}
 	
+	public <T> T find(Class<T> clazz, Object primaryKey)
+	{
+		return entityManager.find(clazz, primaryKey);
+	}
+	
+	public <T> void remove(T t)
+	{
+		entityManager.remove(t);
+	}
+	
 	/**
 	 * Commits transaction
 	 */
