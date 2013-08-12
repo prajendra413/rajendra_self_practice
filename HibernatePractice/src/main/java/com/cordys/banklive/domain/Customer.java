@@ -91,17 +91,8 @@ public class Customer {
 	@Column(name = "Opt_Lock_Version")
 	private int version;
 	
-	/*
-	 * Embedded : Specifies the property or field of an entity whose value is an instance of embeddable (value instance) class.
-	 */
 	@Embedded
-	/*
-	 * Used to override mappings of multiple properties or fields
-	 */
 	@AttributeOverrides( {
-		/*
-		 * To override property or field mappings specified at super mapped class or embeddable class.
-		 */
 		@AttributeOverride(name = "street", column = @Column(name = "Customer_Street")),
 		@AttributeOverride(name = "district", column = @Column(name = "Customer_District")),
 		@AttributeOverride(name = "state", column = @Column(name = "Customer_State"))
