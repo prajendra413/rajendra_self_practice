@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 import com.cordys.example.domain.onetoone.unidirection.joincolumn.Passport;
 
-public class TestEMContext {
+public class TestPersistenceContext {
 
 	/**
 	 * @param args
