@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 import com.cordys.example.domain.onetomanymanytoone.bidirection.joincolumn.Department;
 
-public class TestEMNativeQuery {
+public class TestNativeQuery {
 
 	/**
 	 * @param args
