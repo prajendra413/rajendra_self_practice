@@ -1,0 +1,62 @@
+<persistence xmlns = "http://java.sun.com/xml/ns/persistence" xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation = "http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version = "1.0">
+	<persistence-unit name = "JPA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.cordys.banklive.domain.Customer</class>
+		<class>com.cordys.banklive.domain.Account</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.bidirection.joincolumn.Department</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.bidirection.joincolumn.Employee</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.onetomany.joincolumn.Order</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.onetomany.joincolumn.OrderDetail</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.onetomany.jointable.Bus</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.onetomany.jointable.Passenger</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.manytoone.jointable.Vehicle</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.manytoone.jointable.Rider</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Parent</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Child</class>
+		
+		<class>com.cordys.example.domain.manytomany.unidirection.jointable.Student</class>
+		<class>com.cordys.example.domain.manytomany.unidirection.jointable.Course</class>
+		
+		<class>com.cordys.example.domain.manytomany.bidirection.jointable.Permission</class>
+		<class>com.cordys.example.domain.manytomany.bidirection.jointable.User</class>
+		
+		<class>com.cordys.example.domain.onetomanymanytoone.bidirection.jointable.Country</class>
+		<class>com.cordys.example.domain.onetomanymanytoone.bidirection.jointable.State</class>
+		
+		<class>com.cordys.example.domain.onetoone.unidirection.joincolumn.Person</class>
+		<class>com.cordys.example.domain.onetoone.unidirection.joincolumn.Passport</class>
+		
+		<class>com.cordys.example.domain.onetoone.unidirection.jointable.People</class>
+		<class>com.cordys.example.domain.onetoone.unidirection.jointable.Member</class>
+		
+		<class>com.cordys.example.domain.onetoone.bidirection.Person1</class>
+		<class>com.cordys.example.domain.onetoone.bidirection.Passport1</class>
+		
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<!-- property name = "hibernate.archive.autodetection" value = "class, hbm"/-->
+
+			<property name = "hibernate.dialect" value = "org.hibernate.dialect.MySQLDialect"/>
+
+			<property name = "hibernate.connection.driver_class" value = "com.mysql.jdbc.Driver"/>
+			<property name = "hibernate.connection.url" value = "jdbc:mysql://localhost:3306/banklive"/>
+			<property name = "hibernate.connection.username" value = "root"/>
+			<property name = "hibernate.connection.password" value = "c0rdys"/>
+
+			<property name = "hibernate.c3p0.min_size" value = "5"/>
+			<property name = "hibernate.c3p0.max_size" value = "10"/>
+			<property name = "hibernate.c3p0.timeout" value = "300"/>
+			<property name = "hibernate.c3p0.max_statements" value = "50"/>
+
+			<property name = "hibernate.show_sql" value = "true"/>
+			<property name = "hibernate.c3p0.format_sql" value = "true"/>
+
+			<!-- property name = "hibernate.hbm2ddl.auto" value = "create"/-->
+		</properties>
+	</persistence-unit>
+</persistence>
