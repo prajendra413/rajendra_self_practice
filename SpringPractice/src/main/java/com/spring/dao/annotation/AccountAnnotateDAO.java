@@ -1,4 +1,4 @@
-package com.spring.dao.di;
+package com.spring.dao.annotation;
 
 import java.util.List;
 

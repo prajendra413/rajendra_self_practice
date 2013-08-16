@@ -1,4 +1,4 @@
-package com.spring.service.di;
+package com.spring.service.annotation;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import com.spring.dao.di.AccountAnnotateDAO;
+import com.spring.dao.annotation.AccountAnnotateDAO;
 import com.spring.domain.Account;
 
 @Service("accountService")

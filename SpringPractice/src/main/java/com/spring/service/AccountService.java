@@ -1,8 +1,8 @@
-package com.spring.service.di;
+package com.spring.service;
 
 import java.util.List;
 
-import com.spring.dao.di.AccountDAO;
+import com.spring.dao.AccountDAO;
 import com.spring.domain.Account;
 
 public class AccountService {

@@ -1,4 +1,4 @@
-package com.spring.dao.di;
+package com.spring.dao;
 
 import java.util.List;
 

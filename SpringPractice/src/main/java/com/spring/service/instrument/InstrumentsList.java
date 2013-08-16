@@ -1,11 +1,10 @@
-package com.spring.service.di.instrument;
+package com.spring.service.instrument;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
-import com.spring.dao.di.instrument.Instrument;
+import com.spring.dao.instrument.Instrument;
 
 public class InstrumentsList implements Performer {
 

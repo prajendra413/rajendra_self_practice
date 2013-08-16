@@ -37,16 +37,16 @@
 	<!-- No need to declare bean information here because handled with stereotype annotations -->
 	
 	<!-- AccountService bean configuration -->
-	<!-- bean id = "accountService" class = "com.spring.service.AccountAnnotateService">
+	<!-- bean id = "accountService" class = "com.spring.service.annotation.AccountAnnotateService">
 	</bean-->
 	
 	<!--CSV AccountDAO bean configuration  -->
-	<!-- bean id = "csvAccountDAO" class = "com.spring.dao.CsvAccountAnnotateDAO" c:csvFile="accounts.csv">
+	<!-- bean id = "csvAccountDAO" class = "com.spring.dao.annotation.CsvAccountAnnotateDAO" c:csvFile="accounts.csv">
 		<constructor-arg value = "accounts.csv"></constructor-arg>
 	</bean-->
 	
 	<!--JDBC AccountDAO bean configuration  -->
-	<!-- bean id = "jdbcAccountDAO" class = "com.spring.dao.JDBCAccountAnnotateDAO" p:basicDataSource-ref="dataSource">
+	<!-- bean id = "jdbcAccountDAO" class = "com.spring.dao.annotation.JDBCAccountAnnotateDAO" p:basicDataSource-ref="dataSource">
 		<property name = "basicDataSource" ref = "dataSource"></property>
 	</bean-->
 	

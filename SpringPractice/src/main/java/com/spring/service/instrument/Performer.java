@@ -1,4 +1,4 @@
-package com.spring.service.di.instrument;
+package com.spring.service.instrument;
 
 public interface Performer {
 	void perform();

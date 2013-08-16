@@ -1,10 +1,10 @@
-package com.spring.controller.di;
+package com.spring.controller.annotation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.spring.service.di.AccountAnnotateService;
+import com.spring.service.annotation.AccountAnnotateService;
 
 public class TestAccountAnnotateService {
 	public static void main(String[] args) {

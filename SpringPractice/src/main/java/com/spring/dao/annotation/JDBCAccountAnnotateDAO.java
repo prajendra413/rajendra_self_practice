@@ -1,4 +1,4 @@
-package com.spring.dao.di;
+package com.spring.dao.annotation;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,12 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.spring.domain.Account;
 
+@Repository("jdbcAccountDAO")
+public class JDBCAccountAnnotateDAO implements AccountAnnotateDAO {
 
-public class JDBCAccountDAO implements AccountDAO {
-
+	@Autowired
 	private BasicDataSource basicDataSource;
 	
 	public void setBasicDataSource(BasicDataSource basicDataSource){

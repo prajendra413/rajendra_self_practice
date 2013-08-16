@@ -1,10 +1,10 @@
-package com.spring.controller.di.instrument;
+package com.spring.controller.instrument;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.spring.service.di.instrument.InstrumentsList;
+import com.spring.service.instrument.InstrumentsList;
 
 public class TestInstrumentsListService {
 	

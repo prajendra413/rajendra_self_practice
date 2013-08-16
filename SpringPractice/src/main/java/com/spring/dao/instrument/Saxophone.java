@@ -1,4 +1,4 @@
-package com.spring.dao.di.instrument;
+package com.spring.dao.instrument;
 
 import org.springframework.stereotype.Repository;
 

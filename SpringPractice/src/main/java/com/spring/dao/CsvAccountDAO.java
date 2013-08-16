@@ -1,4 +1,4 @@
-package com.spring.dao.di;
+package com.spring.dao;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,18 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Repository;
 
 import com.spring.domain.Account;
 
-@Repository("csvAccountDAO")
-public class CsvAccountAnnotateDAO implements AccountAnnotateDAO {
+public class CsvAccountDAO implements AccountDAO {
 
 	private Resource csvResource;
-
-	public void setCsvResource(Resource csvFile) {
+	
+	public CsvAccountDAO(Resource csvFile) {
 		this.csvResource = csvFile;
-	}
+    }
+	/*public void setCsvResource(Resource csvFile) {
+		this.csvResource = csvFile;
+	}*/
+	
 	
 	@Override
 	public List<Account> findAccounts() {

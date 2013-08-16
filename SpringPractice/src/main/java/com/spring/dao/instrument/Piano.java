@@ -1,4 +1,4 @@
-package com.spring.dao.di.instrument;
+package com.spring.dao.instrument;
 
 public class Piano {
 
