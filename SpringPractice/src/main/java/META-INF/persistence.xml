@@ -2,8 +2,14 @@
 	<persistence-unit name = "JPA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
-		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.joincolumn.Department</class>
-		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.joincolumn.Employee</class>
+		<class>com.spring.jpa.domain.onetoone.unidirection.joincolumn.Person</class>
+		<class>com.spring.jpa.domain.onetoone.unidirection.joincolumn.Passport</class>
+		
+		<class>com.spring.jpa.domain.onetoone.unidirection.jointable.People</class>
+		<class>com.spring.jpa.domain.onetoone.unidirection.jointable.Member</class>
+		
+		<class>com.spring.jpa.domain.onetoone.bidirection.Aadhar</class>
+		<class>com.spring.jpa.domain.onetoone.bidirection.Human</class>
 		
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.onetomany.joincolumn.Order</class>
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.onetomany.joincolumn.OrderDetail</class>
@@ -11,11 +17,17 @@
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.onetomany.jointable.Bus</class>
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.onetomany.jointable.Passenger</class>
 		
+		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Parent</class>
+		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Child</class>
+		
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.jointable.Vehicle</class>
 		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.jointable.Rider</class>
 		
-		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Parent</class>
-		<class>com.spring.jpa.domain.onetomanymanytoone.unidirection.manytoone.joincolumn.Child</class>
+		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.joincolumn.Department</class>
+		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.joincolumn.Employee</class>
+		
+		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.jointable.Country</class>
+		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.jointable.State</class>
 		
 		<class>com.spring.jpa.domain.manytomany.unidirection.jointable.Student</class>
 		<class>com.spring.jpa.domain.manytomany.unidirection.jointable.Course</class>
@@ -23,19 +35,8 @@
 		<class>com.spring.jpa.domain.manytomany.bidirection.jointable.Permission</class>
 		<class>com.spring.jpa.domain.manytomany.bidirection.jointable.User</class>
 		
-		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.jointable.Country</class>
-		<class>com.spring.jpa.domain.onetomanymanytoone.bidirection.jointable.State</class>
-		
-		<class>com.spring.jpa.domain.onetoone.unidirection.joincolumn.Person</class>
-		<class>com.spring.jpa.domain.onetoone.unidirection.joincolumn.Passport</class>
-		
-		<class>com.spring.jpa.domain.onetoone.unidirection.jointable.People</class>
-		<class>com.spring.jpa.domain.onetoone.unidirection.jointable.Member</class>
-		
-		<class>com.spring.jpa.domain.onetoone.bidirection.Person1</class>
-		<class>com.spring.jpa.domain.onetoone.bidirection.Passport1</class>
-		
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        
 		<properties>
 			<!-- property name = "hibernate.archive.autodetection" value = "class, hbm"/-->
 
@@ -51,8 +52,8 @@
 			<property name = "hibernate.c3p0.timeout" value = "300"/>
 			<property name = "hibernate.c3p0.max_statements" value = "50"/>
 
-			<property name = "hibernate.show_sql" value = "true"/>
-			<property name = "hibernate.format_sql" value = "true"/>
+			<!-- property name = "hibernate.show_sql" value = "true"/-->
+			<!-- property name = "hibernate.format_sql" value = "true"/-->
 
 			<!-- property name = "hibernate.hbm2ddl.auto" value = "create"/-->
 		</properties>

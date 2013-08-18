@@ -14,7 +14,7 @@ public class TestJPA {
 		IJPAService jpaService = appContext.getBean("jpaService", IJPAService.class);
 		
 		Passport p = new Passport();
-		p.setPassportId(2);
+		p.setPassportId(5);
 		p.setPassportNo("1234");
 		jpaService.createPassport(p);
 		

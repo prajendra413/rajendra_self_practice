@@ -1,6 +1,7 @@
 package com.spring.jpa.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,10 +9,11 @@ import com.spring.jpa.dao.IJPADao;
 import com.spring.jpa.domain.onetoone.unidirection.joincolumn.Passport;
 
 @Service(value = "jpaService")
-@Transactional
+
 public class JPAService implements IJPAService{
 
 	@Autowired
+	@Qualifier(value="jpaDao")
 	private IJPADao jpaDao;
 	
 	public IJPADao getJpaDao() {
@@ -23,6 +25,7 @@ public class JPAService implements IJPAService{
 	}
 
 	@Override
+	@Transactional
 	public void createPassport(Passport p) {
 		jpaDao.createEntity(p);
 	}

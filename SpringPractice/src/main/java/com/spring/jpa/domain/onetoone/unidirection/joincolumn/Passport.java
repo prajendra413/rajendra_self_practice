@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity(name = "Passport_EM")
-@Table(name = "Passport_PK")
+@Table(name = "Passport")
 @NamedQueries({
 	@NamedQuery(name = "Passport.all", query="from Passport_EM"),
 	@NamedQuery(name = "Passport.findById", query = "from Passport_EM p where p.passportId = :id")

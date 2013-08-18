@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Member_FK")
+@Table(name = "Member")
 public class Member {
 	@Id
 	@Column(name="Member_Id")
@@ -23,7 +23,7 @@ public class Member {
 	 * It is specified owning side of association (foreing key table).
 	 */
 	@JoinTable
-	(	name = "MemerFK_PeoplePK",
+	(	name = "Memer_People",
 		/*
 		 * Specifies the foreign key columns in joint table which references the primary table of entity owning association.  
 		 */

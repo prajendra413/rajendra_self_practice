@@ -8,13 +8,13 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Person1")
-public class Person1 {
+@Table(name = "Human")
+public class Human {
 	
 	@Id
-	private int personId;
+	private int humanID;
 	
-	@Column(name = "Name")
+	@Column(name = "HumanName")
 	private String name;
 	/*
 	 * OneToOne : Defines a single-valued association to another entity that has
@@ -22,15 +22,15 @@ public class Person1 {
 	 * If one-to-one association is bidirectional then mappedby attribute should be exists at non-owning side.
 	 */
 	@OneToOne 
-	@JoinColumn(name= "PassId")
-	private Passport1 passport;
+	@JoinColumn(name= "AadharId")
+	private Aadhar aadhar;
 
-	public int getPersonId() {
-		return personId;
+	public int getHumanId() {
+		return humanID;
 	}
 
-	public void setPersonId(int personId) {
-		this.personId = personId;
+	public void setHumanId(int humanID) {
+		this.humanID = humanID;
 	}
 
 	public String getName() {
@@ -41,12 +41,12 @@ public class Person1 {
 		this.name = name;
 	}
 
-	public Passport1 getPassport() {
-		return passport;
+	public Aadhar getAadhar() {
+		return aadhar;
 	}
 
-	public void setPassport(Passport1 passport) {
-		this.passport = passport;
+	public void setAadhar(Aadhar aadhar) {
+		this.aadhar = aadhar;
 	}
 	
 }

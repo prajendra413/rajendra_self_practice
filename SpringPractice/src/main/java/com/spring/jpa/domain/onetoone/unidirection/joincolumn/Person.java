@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 // Person is foreign key table and Passport is primary key table.
 @Entity
-@Table(name = "Person_FK")
+@Table(name = "Person")
 public class Person {
 	
 	@Id

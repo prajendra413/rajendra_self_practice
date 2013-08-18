@@ -5,7 +5,7 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository(value = "jpaDao")
 public class JPADao implements IJPADao {
 	
 	@PersistenceContext
