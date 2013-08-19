@@ -9,5 +9,9 @@ public interface IJPAService {
 	void updatePassport(Passport p);
 	
 	void deletePassport(Passport p);
+	
+	Passport findPassport(int id);
+	
+	void update(int id, String value);
  
 }

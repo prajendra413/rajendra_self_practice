@@ -12,21 +12,29 @@ public class JPADao implements IJPADao {
 	private EntityManager entityManager;
 	@Override
 	public <T> void createEntity(T t) {
-		//EntityTransaction transaction = entityManager.getTransaction();
-		//transaction.begin();
 		entityManager.persist(t);
-		//transaction.commit();
-		
+		flushToDatabase();
 	}
 
 	@Override
 	public <T> void updateEntity(T t) {
 		entityManager.merge(t);
+		flushToDatabase();
 	}
 
 	@Override
 	public <T> void deleteEntity(T t) {
 		entityManager.remove(t);
+		flushToDatabase();
+	}
+
+	@Override
+    public <T> T findEntity(Class<T> entityClass, int id) {
+	   return entityManager.find(entityClass, id);
+    }
+	
+	private void flushToDatabase() {
+		entityManager.flush();
 	}
 
 }

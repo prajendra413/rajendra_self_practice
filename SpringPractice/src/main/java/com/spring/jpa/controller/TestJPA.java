@@ -13,10 +13,17 @@ public class TestJPA {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("jpa/jpaApplicationContext.xml");
 		IJPAService jpaService = appContext.getBean("jpaService", IJPAService.class);
 		
-		Passport p = new Passport();
-		p.setPassportId(5);
+		/*Passport p = new Passport();
+		p.setPassportId(14);
 		p.setPassportNo("1234");
-		jpaService.createPassport(p);
+		jpaService.createPassport(p);*/
+		
+		/*Passport p1 = jpaService.findPassport(1);
+		p1.setPassportNo("12345");
+		
+		jpaService.updatePassport(p1);*/
+		
+		jpaService.update(1, "12");
 		
 		((ConfigurableApplicationContext)appContext).close();
 	}

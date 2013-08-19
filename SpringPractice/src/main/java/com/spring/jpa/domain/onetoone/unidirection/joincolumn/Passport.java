@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity(name = "Passport_EM")
 @Table(name = "Passport")
@@ -20,6 +21,10 @@ public class Passport {
 	
 	@Column(name = "No")
 	private String passportNo;
+	
+	@Version
+	@Column(name = "Opt_Lock_Version")
+	private int version;
 	
 	public int getPassportId() {
 		return passportId;

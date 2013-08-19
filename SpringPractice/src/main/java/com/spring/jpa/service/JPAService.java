@@ -31,6 +31,7 @@ public class JPAService implements IJPAService{
 	}
 
 	@Override
+	@Transactional
 	public void updatePassport(Passport p) {
 		jpaDao.updateEntity(p);	
 	}
@@ -39,4 +40,18 @@ public class JPAService implements IJPAService{
 	public void deletePassport(Passport p) {
 		jpaDao.deleteEntity(p);	
 	}
+
+	@Override
+    public Passport findPassport(int id) {
+	    return jpaDao.findEntity(Passport.class, id);
+    }
+
+	@Override
+	@Transactional
+    public void update(int id, String value) {
+		Passport p = findPassport(id);
+		p.setPassportNo(value);
+		jpaDao.updateEntity(p);	
+	    
+    }
 }
