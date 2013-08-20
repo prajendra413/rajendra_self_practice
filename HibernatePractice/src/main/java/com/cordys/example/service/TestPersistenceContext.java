@@ -19,32 +19,32 @@ public class TestPersistenceContext {
 		EntityTransaction transaction = manager.getTransaction();
 		transaction.begin();
 		
-		Passport passport = new Passport(); // Object state is transient
+		/*Passport passport = new Passport(); // Object state is transient
 		
 		passport.setPassportId(10);
 		passport.setPassportNo("80809");
 		
-		/*
+		
 		 * Transient state to persist state
-		 */
+		 
 		manager.persist(passport); // Object state is persistent
 		
 		//manager.persist(passport);  // No impact
-		/*
+		
 		 * Insert / Update / Delete wil be executed.
-		 */
+		 
 		manager.flush(); // Insert will be fired.
 		
 		passport.setPassportNo("1234");
 		
 		manager.flush(); // Update will be fired
 		
-		/*
+		
 		 * Entity will be synchronized to database
 		 * SQL Command will be executed.
 		 * Insert / Update / Delete wil be executed if flush is not invoked on EntityManager.
 		 * Transaction commit will be triggered.
-		 */
+		 
 		transaction.commit(); // Commit will be fired
 		//transaction.commit(); // Transaction not active error will come.
 		
@@ -61,7 +61,7 @@ public class TestPersistenceContext {
 		transaction.commit(); // Commit will be fired.
 		
 		manager.close();
-		
+		*/
 		/*manager.remove(passport); // EntityManager is close error will come.
 		manager.flush();*/
 		
@@ -141,7 +141,7 @@ public class TestPersistenceContext {
 		transaction.commit();
 		manager.close();*/
 		
-		manager = factory.createEntityManager();
+		/*manager = factory.createEntityManager();
 		transaction = manager.getTransaction();
 		transaction.begin();
 		Passport passport1 = new Passport(); //Object state is transient.
@@ -159,12 +159,23 @@ public class TestPersistenceContext {
 		manager.find(Passport.class, 11);
 		passport1.setPassportNo("5678");
 		
-		/*Passport passport3 = */ manager.merge(passport1);
+		Passport passport3 =  manager.merge(passport1);
 		//manager.persist(passport3); // Optional
 		manager.flush();	//Update will be fired.
 		transaction.commit();
-		manager.close();
+		manager.close();*/
 		
+		
+	
+		/*manager = factory.createEntityManager();
+		transaction = manager.getTransaction();
+		transaction.begin();*/
+		Passport p = manager.find(Passport.class, 1);
+		p.setPassportNo("1");
+		manager.merge(p);
+		manager.flush();
+		transaction.commit();
+		manager.close();
 		
 		
 	}
