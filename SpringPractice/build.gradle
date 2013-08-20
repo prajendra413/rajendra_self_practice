@@ -12,7 +12,10 @@ dependencies {
     compile 'org.springframework:spring-aspects:3.2.3.RELEASE'
 	compile 'org.springframework:spring-orm:3.2.4.RELEASE'
 	compile 'org.hibernate:hibernate-entitymanager:4.0.0.Final'
+	compile 'org.springframework:spring-test:3.2.3.RELEASE'
 	compile 'commons-dbcp:commons-dbcp:1.2.2'
+	compile 'org.mockito:mockito-all:1.9.5'
+	compile 'junit:junit:4.11'
 	
     runtime 'org.slf4j:slf4j-log4j12:1.7.5'
 }
