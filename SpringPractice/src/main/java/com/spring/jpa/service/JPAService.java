@@ -51,7 +51,6 @@ public class JPAService implements IJPAService{
     public void update(int id, String value) {
 		Passport p = findPassport(id);
 		p.setPassportNo(value);
-		jpaDao.updateEntity(p);	
-	    
+		jpaDao.updateEntity(p);
     }
 }
