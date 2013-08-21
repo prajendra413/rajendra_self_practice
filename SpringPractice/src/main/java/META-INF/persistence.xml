@@ -58,4 +58,26 @@
 			<!-- property name = "hibernate.hbm2ddl.auto" value = "create"/-->
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name = "JPATest">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>com.spring.jpa.domain.onetoone.unidirection.joincolumn.Passport</class>
+		
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        
+		<properties>
+			<!-- property name = "hibernate.archive.autodetection" value = "class, hbm"/-->
+
+			<property name = "hibernate.dialect" value = "org.hibernate.dialect.H2Dialect"/>
+
+			<property name = "hibernate.connection.driver_class" value = "org.h2.Driver"/>
+			<property name = "hibernate.connection.url" value = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+
+			<!-- property name = "hibernate.show_sql" value = "true"/-->
+			<!-- property name = "hibernate.format_sql" value = "true"/-->
+
+			<property name = "hibernate.hbm2ddl.auto" value = "create"/>
+		</properties>
+	</persistence-unit>
 </persistence>

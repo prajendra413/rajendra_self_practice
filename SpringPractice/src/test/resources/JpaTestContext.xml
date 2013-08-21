@@ -19,7 +19,7 @@
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-		<property name="persistenceUnitName" value="JPA" />
+		<property name="persistenceUnitName" value="JPATest" />
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.show_sql">true</prop>
